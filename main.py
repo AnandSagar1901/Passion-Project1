@@ -7,14 +7,14 @@ client = genai.Client(api_key=API_KEY)
 def get_gemini_roast(client):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents="Give me a short, funny roast for someone who guessed the wrong number."
+        contents="Give me one short, funny roast for someone who guessed the wrong number."
     )
     return response.text
 
 def get_gemini_compliment(client):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents="Give me a short, funny compliment for someone who guessed the right number."
+        contents="Give me one short, funny compliment for someone who guessed the right number."
     )
     return response.text
 
