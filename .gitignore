@@ -1,0 +1,14 @@
+(# Local environment files)
+.env
+.env.*
+
+# Secret/key files
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
