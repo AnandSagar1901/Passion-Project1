@@ -1,7 +1,7 @@
 import random
 from google import genai
 
-API_KEY = "your_api_key_here"
+API_KEY = "AIzaSyBub6LZewuE6Sya8aprw7hNKlr3k5325FU"
 client = genai.Client(api_key=API_KEY)
 
 def get_gemini_roast(client):
