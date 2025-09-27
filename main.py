@@ -12,18 +12,34 @@ def get_gemini_roast(client):
     return response.text
 
 def get_gemini_compliment(client):
+
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents="Give me a short, funny compliment for someone who guessed the right number."
     )
     return response.text
 
-num = random.randint(1, 100)
+
+Chooser = int(input("Choose a difficulty (1 = Easy, 2 = Medium, 3 = Hard): "))
+if Chooser == 1:
+    num = random.randint(1, 50)
+    difficulty = "1-50"
+elif Chooser == 2:
+    num = random.randint(1, 100)
+    difficulty = "1-100"
+elif Chooser == 3:
+    num = random.randint(1, 500)
+    difficulty = "1-500"
+else:
+    print("Invalid choice, defaulting to Medium (1-100).")
+    num = random.randint(1, 100)
+    difficulty = "1-100"
+
 
 def check_guess(num):
     guess = None
     while guess != num:
-        guess = int(input("Enter your guess (1-100): "))
+        guess = int(input(f"Enter your guess ({difficulty}): "))
         if guess < num:
             print("Too low!")
             print(get_gemini_roast(client))

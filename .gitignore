@@ -12,3 +12,11 @@ secrets.json
 __pycache__/
 *.py[cod]
 
+# Windows system files
+*.log
+*.tmp
+*.exe
+$Recycle.Bin/
+*.pyc
+__pycache__/
+.vscode/
